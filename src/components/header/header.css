@@ -1,0 +1,48 @@
+img{
+    margin-top: 10px;
+    width: 54px;
+    padding: auto;
+    align-items: center;
+    justify-content: center;
+
+}
+a:hover {
+    background-color: #C4067D;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+    justify-content: space-around;
+    width: auto;
+}
+
+header .lupaInput{
+    display: flex;
+    align-items: center;
+    width: 15%;
+}
+
+header .lupaInput img{
+    width: 48px;
+}
+
+header .shopcar img{
+    width: 32px;
+}
+
+.shopcar{
+    display: flex;
+    align-items: center;
+}
+
+.shopcar div{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.shopcar label{
+    margin: 0 15px;
+}

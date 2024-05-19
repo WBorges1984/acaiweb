@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
     <BrowserRouter>
-      <div className='container'>
+      <div className=''>
       <Routes>
           <Route path='/' element={<Dashboard/>}/>
           <Route path='/cardapio' element={<Cardapio/>}/>
