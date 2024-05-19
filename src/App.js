@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Dashboard from './pages/dashboard/dashboard.tsx'
+import Login from './pages/login/login.tsx';
+import Footer from './components/footer/footer.tsx';
+import EsqueciSenha from './pages/esqueciSenha/esqueciSenha.tsx';
+import Register from './pages/register/register.tsx';
+import Cardapio from './pages/cardapio/Cardapio.tsx';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+      <div className='container'>
+      <Routes>
+          <Route path='/' element={<Dashboard/>}/>
+          <Route path='/cardapio' element={<Cardapio/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/register' element={<Register/>}/>
+          <Route path='/esquecisenha' element={<EsqueciSenha/>}/>
+        </Routes>
+      </div>
+    </BrowserRouter>
+      <Footer />
     </div>
   );
 }
