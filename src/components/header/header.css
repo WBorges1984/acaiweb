@@ -10,7 +10,7 @@ a:hover {
     background-color: #C4067D;
 }
 
-header{
+.header-Header{
     display: flex;
     align-items: center;
     background-color: rgb(231, 231, 231);
@@ -18,17 +18,17 @@ header{
     width: auto;
 }
 
-header .lupaInput{
+.header-Header .lupaInput{
     display: flex;
     align-items: center;
     width: 15%;
 }
 
-header .lupaInput img{
+.header-Header .lupaInput img{
     width: 48px;
 }
 
-header .shopcar img{
+.header-Header .shopcar img{
     width: 32px;
 }
 

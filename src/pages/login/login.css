@@ -1,5 +1,6 @@
 body {
     background-image: url("/public/images/bg.jpg");
+    
 }
 
 section {
@@ -26,16 +27,22 @@ form {
 }
 
 .login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
     width: 700px;
-    margin-top: 10%;
-
+    height: 100%;
     border-radius: 15px;
 }
 
 .imgLogoLogin {
-    width: 96px;
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .buttonLogin {

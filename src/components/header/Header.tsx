@@ -7,7 +7,7 @@ export default function Header() {
     const[valueCount, setIValueCount] = useState(21)
 
   return (<>
-    <header>
+    <header className='header-Header'>
         <div>
             <img className={'mb-4'} src="images/logoRed2.png" alt="Logo da marca"/>
         </div>

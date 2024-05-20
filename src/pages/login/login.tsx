@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
-import styles from "./login.module.css";
+import "./login.css";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -20,9 +20,9 @@ const Login = () => {
 
     return (
         <section>
-            <div className={styles.login}>
+            <div className='login'>
                 <img
-                    className={styles.imgLogoLogin}
+                    className='imgLogoLogin'
                     src="images/logoRed2.png"
                     alt="Logo da marca"
                 />
@@ -47,7 +47,7 @@ const Login = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </label>
-                    <div className={styles.buttonLogin}>
+                    <div className='buttonLogin'>
                         <button className="btn btn-acai">Entrar</button>
                         <Link
                             to={"/register"}
