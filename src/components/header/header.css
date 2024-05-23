@@ -1,4 +1,4 @@
-img{
+.header-Header img{
     margin-top: 10px;
     width: 54px;
     padding: auto;
@@ -12,10 +12,11 @@ a:hover {
 
 .header-Header{
     display: flex;
+    position: fixed;
     align-items: center;
     background-color: rgb(231, 231, 231);
     justify-content: space-around;
-    width: auto;
+    width: 100%;
 }
 
 .header-Header .lupaInput{

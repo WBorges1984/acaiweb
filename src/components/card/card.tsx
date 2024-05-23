@@ -1,6 +1,6 @@
 import React from "react";
 import './card.css'
-
+import {dataProdutos} from '../../service/data'
 interface CardProps{
     imgUrl?: string,
     title?: string,
@@ -9,15 +9,40 @@ interface CardProps{
 }
 
 export const Card = (props: CardProps)=>{
+    const repit = [1,2,3,4,5,6];
+    const limitarDescricao = (descricao, limite) => {
+        if (descricao.length > limite) {
+          return descricao.slice(0, limite) + '...';
+        }
+        return descricao;
+      };
+
+      const precoFicticio = (price, percentual)=>{
+        let calc = (parseFloat(price) * percentual)/100 
+        return (parseFloat(price) + calc).toFixed(2);
+      }
+
     return(
         <>
-            <article className="cardProd">
-                <div className="imgProd"><img src="https://as1.ftcdn.net/v2/jpg/02/57/20/54/1000_F_257205476_oti53SUaluLi7Gu6h4IBgJCVoTMDhjqL.jpg" alt="food" /></div>
-                <div className="titleProd">2 Mcofertas Médias</div>
-                <div className="descriptionProd">São 2 Mcofertas Médias Clássicas para você compartilhar com quem preferir #Méquinosofá.</div>
-                <p className="priceProd">A partir de R$ <span>16,90</span></p>
-
+        <title>
+            <h1>Cardápio</h1>
+        </title>
+        <section className="cardSection">
+            {dataProdutos.map((item)=>{
+                return(
+                    <article onClick={()=>console.log(item)} className="cardItem" key={item.id}>
+                <div className="div-description">
+                    <div className="titleProd">{item.titulo}</div>
+                    <div className="descriptionProd">{limitarDescricao(item.descricao, 100)}</div>
+                    <p className="priceProd">A partir de <span>R$ {item.price} <em>R${precoFicticio(item.price, 20)}</em></span></p>
+                </div>
+                <div className="imgProd">
+                    <img src={item.image} alt="food" />
+                </div>
             </article>
+                )
+            })}       
+        </section>
         </>
     )
 }
