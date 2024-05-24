@@ -1,0 +1,7 @@
+.cardSection{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 8%;
+    justify-content: space-evenly;
+}

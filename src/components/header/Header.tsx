@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
 import './header.css'
 import { Link } from 'react-router-dom'
+import { number } from 'prop-types'
 
-export default function Header() {
+interface HeaderProps{
+    item: number
+    valueCount: number
+}
+
+export default function Header(props : HeaderProps) {
     const[itemCount, setItemCount] = useState(2)
     const[valueCount, setIValueCount] = useState(21)
 
