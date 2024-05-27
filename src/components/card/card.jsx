@@ -25,7 +25,12 @@ export const Card = (props)=>{
                     <div className="div-description">
                     <div className="titleProd">{props.title}</div>
                     <div className="descriptionProd">{limitarDescricao(props.description, 100)}</div>
-                    <p className="priceProd">A partir de <span>R$ {props.price} <em>R${precoFicticio(props.price, 20)}</em></span></p>
+                    <div className="priceButton">
+                      <div>
+                        <p className="priceProd">A partir de <span>R$ {props.price} <em>R${precoFicticio(props.price, 20)}</em></span></p>
+                      </div>
+                      <button className="btn btn-acai">Adicionar</button>
+                    </div>
                 </div>
                 <div className="imgProd">
                     <img src={props.imgUrl} alt="food" />

@@ -19,13 +19,15 @@ export default function Cardapio() {
         })}
       {isModal ? 
             <div className='ModalProd'>
-              <div className="imgProd">
-                <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202404081346_6575_i.jpg" alt="" />
-              </div>
-              <div className="descriptionModal">
-                <div className="titleModal"></div>
-                <div className="descModal"></div>
-                <div className="priceModal"></div>
+              <div className="ModalProdCard">
+                <div className="imgProd">
+                  <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202404081346_6575_i.jpg" alt="" />
+                </div>
+                <div className="descriptionModal">
+                  <div className="titleModal"></div>
+                  <div className="descModal"></div>
+                  <div className="priceModal"></div>
+                </div>
               </div>
             </div>
            
