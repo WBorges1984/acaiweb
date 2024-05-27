@@ -1,16 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './header.css'
 import { Link } from 'react-router-dom'
 import { number } from 'prop-types'
+import { ShopCar } from '../../context/ContextValueCar'
 
-interface HeaderProps{
-    item: number
-    valueCount: number
-}
 
-export default function Header(props : HeaderProps) {
-    const[itemCount, setItemCount] = useState(2)
-    const[valueCount, setIValueCount] = useState(21)
+export default function Header(props) {
+    
+    const {items, setItems, valuesItems, setValuesItems} = useContext(ShopCar);
 
   return (<>
     <header className='header-Header'>
@@ -32,8 +29,8 @@ export default function Header(props : HeaderProps) {
         <div className="shopcar">
                 <img className={'mb-4'} src="images/buy.png" alt="Logo da marca"/>
             <div>
-                <label>R${valueCount},00</label>
-                <label>{itemCount}{itemCount > 1 ? ' itens':' item'}</label>
+                <label>R${valuesItems},00</label>
+                <label>{items}{items > 1 ? ' itens':' item'}</label>
             </div>
         </div>
     </header>

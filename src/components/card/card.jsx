@@ -1,15 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import './card.css'
+import { ShopCar } from "../../context/ContextValueCar";
 
-interface CardProps{
-    imgUrl?: string,
-    title?: string,
-    description?: string,
-    price?: string
-}
 
-export const Card = (props: CardProps)=>{
+export const Card = (props)=>{
     
+  const {items, setItems, ValuesItems, setValuesItems} = useContext(ShopCar)
+
+
     const limitarDescricao = (descricao, limite) => {
         if (descricao.length > limite) {
           return descricao.slice(0, limite) + '...';
@@ -23,7 +21,7 @@ export const Card = (props: CardProps)=>{
       }
 
     return(
-            <article className="cardItem">
+            <article className="cardItem"  >
                     <div className="div-description">
                     <div className="titleProd">{props.title}</div>
                     <div className="descriptionProd">{limitarDescricao(props.description, 100)}</div>

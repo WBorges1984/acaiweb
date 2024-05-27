@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../components/buttons/Button.tsx";
+import Button from "../../components/buttons/Button.jsx";
 
 
 const Dashboard = () => {
