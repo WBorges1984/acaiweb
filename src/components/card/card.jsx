@@ -29,7 +29,7 @@ export const Card = (props)=>{
                       <div>
                         <p className="priceProd">A partir de <span>R$ {props.price} <em>R${precoFicticio(props.price, 20)}</em></span></p>
                       </div>
-                      <button className="btn btn-acai">Adicionar</button>
+                      <button className="btn btn-acai" onClick={props.SetModalTrue}>Adicionar</button>
                     </div>
                 </div>
                 <div className="imgProd">
