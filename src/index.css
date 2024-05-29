@@ -122,6 +122,30 @@ textarea {
     background-color: #000;
 }
 
+.btn-sun-up{
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    background-color: #c5067e;
+    color: #FFF;
+    padding: 2px;
+}
+
+.btn-sun-up:hover{ background-color: #d63d9e;}
+
+.btn-sun-down{
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    background-color: #0f730c;
+    color: #FFF;
+    padding: 2px;
+}
+
+.btn-sun-down:hover{background-color: #238b1f;}
+
 .btn.btn-danger:hover {
     background-color: #dc3545;
 }
