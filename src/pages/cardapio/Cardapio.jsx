@@ -18,15 +18,27 @@ export default function Cardapio() {
 
   return (<>
   {isModal ? 
+  <div>
+    <p>
+      <IsModal SetModalfalse={SetModalfalse}
+              urlImg='https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403081153_8HPM_i.jpg'
+              titulo='Picolé WHITE 75G'
+              priceOld='50,00'
+              qtd={3}
+              priceFull='150,00'
+                />
+    </p>
+    <p>
+      <IsModal SetModalfalse={SetModalfalse}
+              urlImg='https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403081153_8HPM_i.jpg'
+              titulo='Picolé WHITE 75G'
+              priceOld='50,00'
+              qtd={3}
+              priceFull='150,00'
+                />
+    </p>
   
-    <IsModal SetModalfalse={SetModalfalse}
-             urlImg='https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403081153_8HPM_i.jpg'
-             titulo='Picolé WHITE 75G'
-             priceOld='50,00'
-             qtd={3}
-             priceFull='150,00'
-              />
-    
+  </div>
     : ''}
 
     <Header item={0} valueCount={0}/>
