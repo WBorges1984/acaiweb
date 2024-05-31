@@ -38,10 +38,23 @@ a:hover {
     align-items: center;
 }
 
+.shopcar:hover{
+    cursor: pointer;
+    background-color: #c4067e2d;
+    border: 1px solid #C4067D;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.shopcar label{
+    cursor: pointer;
+}
+
 .shopcar div{
     display: flex;
     flex-direction: column;
     justify-self: center;
+    cursor: pointer;
 }
 
 .shopcar label{

@@ -1,10 +1,27 @@
+import { Dock } from 'react-dock'
 import './ismodal.css'
+import { useEffect, useState } from 'react';
 
 export function IsModal(props){
+const [show, setShow] = useState(false)
 
+    useEffect(()=>{
+        window.addEventListener('openSideBar', function(){
+            setShow(true);
+        })
+    },[]);
+
+  
 
     return(
         <>
+        <Dock position='right'
+            isVisible={show}
+            fluid={false}
+            size={420}
+            onVisibleChange={(visible) =>{
+                setShow(visible);
+            }}>
             <div className='ModalProd' >
               <div className="modalClose" onClick={props.SetModalfalse}></div>
               <div className="ModalProdCard">
@@ -26,7 +43,7 @@ export function IsModal(props){
               </div>
               
             </div>
-        
+            </Dock>
         </>
     )
 } 
