@@ -65,3 +65,10 @@
     flex-direction: row;
     justify-content: space-between;   
 }
+
+.buttons-cart{
+    display: inline-flex;
+    width: 150px;
+    height: 60px;
+    margin-right: 60px;
+}

@@ -2,30 +2,22 @@
 import { Dock } from 'react-dock';
 import './ismodal.css'
 import { useContext, useEffect, useState } from 'react';
+import { dataCartItems } from '../../service/dataCartItems';
 import { ShopCar } from '../../context/ContextValueCar';
 
 export function IsModal(props){
 const [show, setShow] = useState(false)
-const {cartItems, totalCart, AddItemCart, RemoveItemCart} = useContext(ShopCar)
-
+const [totalSacola, setTotalSacola]= useState(0);
+const {cartItems, totalCart} = useContext(ShopCar)
 
     useEffect(()=>{
-        window.addEventListener('openSideBar', function(){
+        window.addEventListener('openSideBarItem', function(){
             setShow(true);
         })
     },[]);
     
-    function AddItem(id,nome,preco,foto){
-      const item = {
-        
-          id: id, 
-          nome,
-          preco,
-          foto,
-          qtd: 1
-    }
-      
-      AddItemCart(item)
+    function decremetarQtd(){
+      props.qtd = 10;
     }
 
 
@@ -37,7 +29,7 @@ const {cartItems, totalCart, AddItemCart, RemoveItemCart} = useContext(ShopCar)
 
     return(
         <>
-        <Dock position='right'
+        <Dock position='bottom'
             isVisible={show}
             fluid={false}
             size={310}
@@ -46,6 +38,7 @@ const {cartItems, totalCart, AddItemCart, RemoveItemCart} = useContext(ShopCar)
             }}>
 
             <div className='ModalProd' >
+              <h1>Itens do Pedido {props.idPedido}</h1>
                {cartItems.map((item)=>{
                 return(
                   <div className="ModalProdCard" key={item.id}>
@@ -58,9 +51,9 @@ const {cartItems, totalCart, AddItemCart, RemoveItemCart} = useContext(ShopCar)
                         <div className="priceOldModal">{ConverteValor(item.preco)}</div>
                         <div className="qtdPrice">
                           <div className='quantidade'>
-                            <button onClick={()=>RemoveItemCart(item.id)} className='btn-sun-up'><span>-</span></button>
+                            <button onClick={decremetarQtd} className='btn-sun-up'><span>-</span></button>
                             <span>{item.qtd}</span>
-                            <button onClick={()=>AddItem(item.id,item.nome,item.preco,item.foto)} className='btn-sun-down'><span>+</span></button>
+                            <button className='btn-sun-down'><span>+</span></button>
                           </div>
                           <div className="priceModal">{ConverteValor(item.preco * item.qtd)}</div>
                           

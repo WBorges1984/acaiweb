@@ -89,6 +89,14 @@ textarea {
     background-color: #830454;
     border-radius: o;
 }
+.btn.btn-edit {
+    background-color: #c54205;
+    border-radius: o;
+}
+.btn.btn-edit:hover {
+    background-color: #8b2d02;
+    border-radius: o;
+}
 
 .btn.btn-link {
     background-color: transparent;
