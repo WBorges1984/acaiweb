@@ -27,10 +27,14 @@ export const Card = (props)=>{
 
 
       function openSideBar(){
-          const event = new CustomEvent('openSideBar');
-          window.dispatchEvent(event);
+           const event = new CustomEvent('openModalEdicao');
+           window.dispatchEvent(event);
+
+          // const event = new CustomEvent('openSideBar');
+          // window.dispatchEvent(event);
           
-          
+          console.log(event)
+
         const item = {
            id: props.itemId, 
           nome: props.title,
@@ -48,7 +52,7 @@ export const Card = (props)=>{
             <article className="cardItem"  >
                     <div className="div-description">
                 <div className="imgProd">
-                    <img src={props.imgUrl} alt="food" />
+                    <img src={props.image} alt="food" />
                 </div>
                     <div className="titleProd">{props.title}</div>
                     <div className="descriptionProd">{limitarDescricao(props.description, 100)}</div>
@@ -57,7 +61,7 @@ export const Card = (props)=>{
                         <p className="priceProd">A partir de <span>R$ {props.price} <em>R${precoFicticio(props.price, 20)}</em></span></p>
                       </div>
                       <div className="buttons-cart">
-                        <button className="btn btn-edit" onClick={openSideBarItem}>Editar</button>
+                        {/* <button className="btn btn-edit" onClick={openSideBarItem}>Editar</button> */}
                         <button className="btn btn-acai" onClick={openSideBar}>Adicionar</button>
 
                       </div>

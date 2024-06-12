@@ -3,11 +3,13 @@ import './header.css';
 import { Link } from 'react-router-dom';
 import { ShopCar } from '../../context/ContextValueCar';
 import { IsModal } from '../isModal/IsModal';
+import ModalEdicao from '../isModal/modalEdicao/ModalEdicao';
 
 export default function Header() {
     const { items, cartItems, valuesItems,totalCart } = useContext(ShopCar);
     const qtdItems = cartItems.length;
-    const openSideBar = () => {
+    
+    const openModalEdicao = () => {
         const event = new CustomEvent('openSideBar');
         window.dispatchEvent(event);
         console.log('open');
@@ -29,7 +31,7 @@ export default function Header() {
                     <img className='mb-4' src="images/lupa.png" alt="Lupa" />
                     <input type="text" placeholder='Procura no Cardápio' />
                 </div>
-                <div className="shopcar" onClick={openSideBar}>
+                <div className="shopcar" onClick={openModalEdicao}>
                     <img className='mb-4' src="images/buy.png" alt="Carrinho de compras" />
                     <div>
                         <label>{new Intl.NumberFormat('pt-BR',{style: 'currency', currency: 'BRL'}).format(totalCart)}</label>
@@ -38,6 +40,7 @@ export default function Header() {
                 </div>
             </header>
             <IsModal />
+            <ModalEdicao/>
         </>
     );
 }
