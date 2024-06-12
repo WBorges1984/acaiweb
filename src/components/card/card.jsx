@@ -47,6 +47,9 @@ export const Card = (props)=>{
     return(
             <article className="cardItem"  >
                     <div className="div-description">
+                <div className="imgProd">
+                    <img src={props.imgUrl} alt="food" />
+                </div>
                     <div className="titleProd">{props.title}</div>
                     <div className="descriptionProd">{limitarDescricao(props.description, 100)}</div>
                     <div className="priceButton">
@@ -59,9 +62,6 @@ export const Card = (props)=>{
 
                       </div>
                     </div>
-                </div>
-                <div className="imgProd">
-                    <img src={props.imgUrl} alt="food" />
                 </div>
             </article>
     )

@@ -1,74 +1,43 @@
-.cardSection{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    padding-top: 8%;
-    justify-content: space-evenly;
-}
-
 .cardItem{
+    background-color: #fff;
     display: flex;
-    background-color: aliceblue;
-    max-width: 550px;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+    width: 250px;
+    height: 450px;
+    margin-top: 100px;
 }
 
-.cardItem:hover{
-    transform: scale(1.1); /* Aumenta o tamanho da div */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+.cardItem img{
+    width: auto;
 }
 
-.div-description{
-    width: 80%;
-}
-.imgProd{
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-
-}
-
-.imgProd img{
-    max-width: 250px;
-    padding: 5px;   
-}
 .titleProd{
-    font-size: larger;
+    font-size: 18px;
     font-weight: 700;
+    text-align: center;
+    margin: 5px;
 }
 
 .descriptionProd{
-    color: rgb(102, 61, 102);
-    margin-top: 5px;
-}
-
-.priceProd{
-    margin-top: 10px;
-    font-weight: 600;
-}
-
-.priceProd span{
-    color: #C4067D;
-}
-
-.priceProd em{
-    text-decoration: line-through;
+    padding: 8px;
+    font-weight: 500;
 }
 
 .priceButton{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;   
+    text-align: center;
+}
+
+.priceProd{
+    font-weight: 700;
+}
+.priceProd span{
+    color: #830454;
+}
+.priceProd em{
+    text-decoration: line-through;
+    color: burlywood;
 }
 
 .buttons-cart{
-    display: inline-flex;
-    width: 150px;
-    height: 60px;
-    margin-right: 60px;
+    display: flex;
+    width: 200px;
 }

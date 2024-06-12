@@ -12,7 +12,7 @@ a:hover {
 
 .header-Header{
     display: flex;
-    position: fixed;
+     position: fixed; 
     align-items: center;
     background-color: rgb(255, 255, 255);
     justify-content: space-around;

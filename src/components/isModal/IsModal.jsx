@@ -46,6 +46,7 @@ const {cartItems, totalCart, AddItemCart, RemoveItemCart} = useContext(ShopCar)
             }}>
 
             <div className='ModalProd' >
+              <h1>Items do pedido</h1>
                {cartItems.map((item)=>{
                 return(
                   <div className="ModalProdCard" key={item.id}>

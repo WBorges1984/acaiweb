@@ -1,0 +1,76 @@
+
+.cardSection{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 8%;
+    justify-content: space-evenly;
+}
+
+.cardItem{
+    display: flex;
+    background-color: aliceblue;
+    max-width: 550px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.cardItem:hover{
+    transform: scale(1.1); /* Aumenta o tamanho da div */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+}
+
+.div-description{
+    width: 80%;
+}
+.imgProd{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+}
+
+.imgProd img{
+    max-width: 250px;
+    padding: 5px;   
+}
+.titleProd{
+    font-size: larger;
+    font-weight: 700;
+}
+
+.descriptionProd{
+    color: rgb(102, 61, 102);
+    margin-top: 5px;
+}
+
+.priceProd{
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.priceProd span{
+    color: #C4067D;
+}
+
+.priceProd em{
+    text-decoration: line-through;
+}
+
+.priceButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}
+
+.buttons-cart{
+    display: inline-flex;
+    width: 150px;
+    height: 60px;
+    margin-right: 60px;
+}
+
