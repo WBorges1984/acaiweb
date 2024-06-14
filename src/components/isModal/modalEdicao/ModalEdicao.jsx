@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Dock } from 'react-dock';
 import { ShopCar } from '../../../context/ContextValueCar';
+import {itemEdicao } from '../../../service/itemEdicao.js'
 
 
 function ModalEdicao(props) {
@@ -46,14 +47,14 @@ function ModalEdicao(props) {
                   <div className="ModalProdCard">
                     <div className="modalContainer">
                       <div className="imgProdIModal">
-                        <img src={props.foto} alt="" />
+                        <img src={itemEdicao[0].foto} alt="" />
                       </div>
                       <div className="descriptionModal">
-                        <div className="titleModal">{props.nome}</div>
-                        <div className="priceOldModal">{ConverteValor(props.preco)}</div>
+                        <div className="titleModal">{itemEdicao[0].nome}</div>
+                        <div className="priceOldModal">{ConverteValor(itemEdicao[0].preco)}</div>
                         <div className="qtdPrice">
                           <div className='quantidade'>
-                            <button onClick={()=>RemoveItemCart(props.id)} className='btn-sun-up'><span>-</span></button>
+                            <button onClick={()=>RemoveItemCart(itemEdicao[0].id)} className='btn-sun-up'><span>-</span></button>
                             <span>{props.qtd}</span>
                             <button onClick={()=>AddItem(props.id,props.nome,props.preco,props.foto)} className='btn-sun-down'><span>+</span></button>
                           </div>

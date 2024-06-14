@@ -1,3 +1,5 @@
+import {itemEdicao} from '../service/itemEdicao.js'
+
 const { createContext, useState } = require("react");
 
 const ShopCar = createContext({});
@@ -67,8 +69,15 @@ function ShopCarProvider(props){
         setCartItems(cartItemsNovo);
         CalcularTotal(cartItemsNovo)
     }
+
+    function edicaoItem(item){
+        itemEdicao.push(item)
+        // console.log(item)
+        console.log(itemEdicao)
+        
+    }
     
-    return <ShopCar.Provider value={{items, cartItems, setCartItems, AddItemCart, RemoveItemCart,totalCart, setTotalCart}}>
+    return <ShopCar.Provider value={{edicaoItem,items, cartItems, setCartItems, AddItemCart, RemoveItemCart,totalCart, setTotalCart}}>
     {props.children}
     </ShopCar.Provider>
 }
