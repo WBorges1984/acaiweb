@@ -28,24 +28,19 @@ export const Card = (props)=>{
 
       function openModalEdicao(){
            const event = new CustomEvent('openModalEdicao');
-           window.dispatchEvent(event);
-
-          // const event = new CustomEvent('openSideBar');
-          // window.dispatchEvent(event);
-          
+           window.dispatchEvent(event);          
           
           const item = {
-            id: props.itemId, 
-            nome: props.title,
-            preco: props.price,
-            foto: props.imgUrl,
+            itemId: props.itemId, 
+            title: props.title,
+            price: props.price,
+            imgUrl: props.imgUrl,
             qtd: 1
           }
-          console.log(item)
-         // edicaoItem(item)
-        
 
-        
+          
+          edicaoItem(item)
+          
       }
 
     return(

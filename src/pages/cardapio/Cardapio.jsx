@@ -20,7 +20,7 @@ export default function Cardapio() {
       {dataProdutos.map((item)=>{
         return(
         <div key={item.id} >
-            <Card itemId={item.id} title={item.titulo} description={item.descricao} price={item.price} imgUrl={item.image}/>
+            <Card itemId={item.id} title={item.title} description={item.description} price={item.price} imgUrl={item.imgUrl}/>
         </div>
             
           )

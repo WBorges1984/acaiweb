@@ -1,4 +1,5 @@
-import {itemEdicao} from '../service/itemEdicao.js'
+import { itemEdicao } from "../service/itemEdicao";
+
 
 const { createContext, useState } = require("react");
 
@@ -12,6 +13,10 @@ function ShopCarProvider(props){
 
     const [cartItems, setCartItems] = useState([]);
     const [totalCart, setTotalCart] = useState(0);
+
+    const [cartItemEdicao, setCartItemEdicao] = useState([]);
+
+    
 
     let cartItemsNovo = [];
     let findItem = false;
@@ -72,24 +77,28 @@ function ShopCarProvider(props){
  
     function edicaoItem(item){
         
-        itemEdicao = {
-            id: item.id, 
-            nome:item.nome,
-            preco:item.preco,
-            foto:item.foto,
+        const  itemNovo = {
+            id: item.itemId, 
+            nome:item.title,
+            preco:item.price,
+            foto:item.imgUrl,
             qtd: item.qtd
         };
-
-        const ItemEdicaoStorage = JSON.stringify(item);
-
-        localStorage.setItem('produto', ItemEdicaoStorage);
-
-        console.log(itemEdicao)
-        // console.log(item)
         
-    }
+        const newItem = cartItemEdicao.map((item) => {
+            if (item.id === itemNovo.id) {
+              return { ...item, name: 'Dona Florinda' };
+            }
+            return item;
+          });
+
+        cartItemEdicao.push(newItem)
+
     
-    return <ShopCar.Provider value={{edicaoItem,items, cartItems, setCartItems, AddItemCart, RemoveItemCart,totalCart, setTotalCart}}>
+    }
+
+    return <ShopCar.Provider value={{cartItemEdicao, edicaoItem,items, cartItems, setCartItems, AddItemCart, RemoveItemCart,totalCart, setTotalCart}}>
+        
     {props.children}
     </ShopCar.Provider>
 }
