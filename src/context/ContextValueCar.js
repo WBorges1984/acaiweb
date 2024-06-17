@@ -69,11 +69,23 @@ function ShopCarProvider(props){
         setCartItems(cartItemsNovo);
         CalcularTotal(cartItemsNovo)
     }
-
+ 
     function edicaoItem(item){
-        itemEdicao.push(item)
-        // console.log(item)
+        
+        itemEdicao = {
+            id: item.id, 
+            nome:item.nome,
+            preco:item.preco,
+            foto:item.foto,
+            qtd: item.qtd
+        };
+
+        const ItemEdicaoStorage = JSON.stringify(item);
+
+        localStorage.setItem('produto', ItemEdicaoStorage);
+
         console.log(itemEdicao)
+        // console.log(item)
         
     }
     

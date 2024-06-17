@@ -41,8 +41,8 @@ export const Card = (props)=>{
             foto: props.imgUrl,
             qtd: 1
           }
-          edicaoItem(item)
-          // console.log(item)
+          console.log(item)
+         // edicaoItem(item)
         
 
         

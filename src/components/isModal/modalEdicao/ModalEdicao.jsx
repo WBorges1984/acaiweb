@@ -47,16 +47,16 @@ function ModalEdicao(props) {
                   <div className="ModalProdCard">
                     <div className="modalContainer">
                       <div className="imgProdIModal">
-                        <img src={itemEdicao[0].foto} alt="" />
+                        <img src={itemEdicao.foto} alt="" />
                       </div>
                       <div className="descriptionModal">
-                        <div className="titleModal">{itemEdicao[0].nome}</div>
-                        <div className="priceOldModal">{ConverteValor(itemEdicao[0].preco)}</div>
+                        <div className="titleModal">{itemEdicao.nome}</div>
+                        <div className="priceOldModal">{ConverteValor(itemEdicao.preco)}</div>
                         <div className="qtdPrice">
                           <div className='quantidade'>
-                            <button onClick={()=>RemoveItemCart(itemEdicao[0].id)} className='btn-sun-up'><span>-</span></button>
+                            <button onClick={()=>RemoveItemCart(itemEdicao.id)} className='btn-sun-up'><span>-</span></button>
                             <span>{props.qtd}</span>
-                            <button onClick={()=>AddItem(props.id,props.nome,props.preco,props.foto)} className='btn-sun-down'><span>+</span></button>
+                            <button onClick={()=>AddItem(props.id,props.nome,props.preco,itemEdicao[0].foto)} className='btn-sun-down'><span>+</span></button>
                           </div>
                           <div className="priceModal">{ConverteValor(props.preco * props.qtd)}</div>
                           
