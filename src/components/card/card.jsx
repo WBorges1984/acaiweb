@@ -38,7 +38,6 @@ export const Card = (props)=>{
             qtd: 1
           }
 
-          
           edicaoItem(item)
           
       }
@@ -56,9 +55,7 @@ export const Card = (props)=>{
                       <p className="priceProd">A partir de <span>R$ {props.price} <em>R${precoFicticio(props.price, 20)}</em></span></p>
                     </div>
                     <div className="buttons-cart">
-                      {/* <button className="btn btn-edit" onClick={openSideBarItem}>Editar</button> */}
                       <button className="btn btn-acai" onClick={openModalEdicao}>Adicionar</button>
-
                     </div>
                   </div>
               </div>

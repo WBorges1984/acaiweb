@@ -85,6 +85,7 @@ function ShopCarProvider(props){
             qtd: item.qtd
         };
         
+        console.log(itemNovo)
         const newItem = cartItemEdicao.map((item) => {
             if (item.id === itemNovo.id) {
               return { ...item, name: 'Dona Florinda' };
