@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Dock } from 'react-dock';
 import { ShopCar } from '../../../context/ContextValueCar';
 import {itemEdit } from '../../../service/itemEdicao.js'
-
+import './modalEdicao.css'
 
 function ModalEdicao(props) {
     const [show, setShow] = useState(false);
@@ -37,29 +37,29 @@ function ModalEdicao(props) {
         <Dock position='bottom'
             isVisible={show}
             fluid={false}
-            size={500}
+            size={400}
             onVisibleChange={(visible) =>{
                 setShow(visible);
             }}>
-                <div className='ModalProd' >
-              <h1>Items do pedido</h1>
+                <div className='container-complementos' >
+              <h1 className=''>Escolha os complementos</h1>
                 {cartItemEdicao.map((item)=>{
                   return(
-                  <div className="ModalProdCard">
-                    <div className="modalContainer">
-                      <div className="imgProdIModal">
+                  <div className="">
+                    <div className="">
+                      <div className="">
                         <img src={item.foto} alt="" />
                       </div>
-                      <div className="descriptionModal">
-                        <div className="titleModal">{item.nome}</div>
-                        <div className="priceOldModal">{ConverteValor(item.preco)}</div>
-                        <div className="qtdPrice">
-                          <div className='quantidade'>
+                      <div className="">
+                        <div className="">{item.nome}</div>
+                        <div className="">{ConverteValor(item.preco)}</div>
+                        <div className="">
+                          <div className=''>
                             <button onClick={()=>RemoveItemCart(item.id)} className='btn-sun-up'><span>-</span></button>
                             <span>{item.qtd}</span>
                             <button onClick={()=>AddItem(item.id,props.nome,item.preco,item.foto)} className='btn-sun-down'><span>+</span></button>
                           </div>
-                          <div className="priceModal">{ConverteValor(item.preco * item.qtd)}</div>
+                          <div className="">{ConverteValor(item.preco * item.qtd)}</div>
                           
                         </div>
                       </div>

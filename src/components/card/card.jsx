@@ -5,7 +5,7 @@ import { ShopCar } from "../../context/ContextValueCar";
 
 export const Card = (props)=>{
     
-  const {edicaoItem, cartItems, setCartItems, AddItemCart, RemoveItemCart,totalCart, setTotalCart} = useContext(ShopCar)
+  const {cartItems, setCartItems, AddItemCart, RemoveItemCart,totalCart, setTotalCart} = useContext(ShopCar)
 
     const limitarDescricao = (descricao, limite) => {
         if (descricao.length > limite) {
@@ -38,7 +38,7 @@ export const Card = (props)=>{
             qtd: 1
           }
 
-          edicaoItem(item)
+         
           
       }
 

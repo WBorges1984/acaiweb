@@ -1,14 +1,30 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 
-export default function itemEdicao(item){
-  
+const ItemForm = () => {
+  const [itemEdicao, setItemEdicao] = useState({
+    "id": '',
+    "title": '',
+    "price": '',
+    "imgUrl": '',
+    "qtd": ''
+  });
 
-   const itemNovo ={
-      "id": item.itemId,
-      "title":item.title,
-      "price":item.price,
-      "imgUrl":item.imgUrl,
-      "qtd": item.qtd }
+  // Função para atualizar o título do item
+  const handleTitleChange = (event) => {
+    setItemEdicao({
+      ...itemEdicao,
+      title: event.target.value
+    });
+  };
 
+  // Função para atualizar o preço do item
+  const handlePriceChange = (event) => {
+    setItemEdicao({
+      ...itemEdicao,
+      price: event.target.value
+    });
+  };
 
-}
+};
+
+export default ItemForm;
