@@ -5,6 +5,8 @@ import { Card } from '../../components/card/card.jsx'
 import {dataProdutos} from '../../service/data.js'
 
 import { ShopCar } from '../../context/ContextValueCar'
+import { fetchProdutosAll } from '../../service/apiProdutosAll.js'
+import { PostPedido } from '../../service/postPedido.js'
 
 
 export default function Cardapio() {
@@ -14,21 +16,15 @@ export default function Cardapio() {
   const {items, setItems, valuesItems, setValuesItems} = useContext(ShopCar);
 
   useEffect(() => {
-    const fetchProdutos = async () => {
+    const getData = async () => {
       try {
-        const response = await fetch('http://localhost:3030/produtos');
-        if (!response.ok) {
-          throw new Error('Falha ao carregar os dados');
-        }
-        const data = await response.json();
-        setData(data.data); // Define os produtos no estado
-        
+        const produtos = await fetchProdutosAll();
+        setData(produtos); // Define os produtos no estado
       } catch (error) {
         console.error('Erro ao carregar os produtos:', error);
       }
     };
-
-    fetchProdutos();
+    getData();
   }, []);
 
   return (<>
@@ -40,7 +36,8 @@ export default function Cardapio() {
         <div key={produto.id_produto}>
           <Card itemId={produto.id_produto} title={produto.nome} description={produto.descricao} price={produto.preco} imgUrl={produto.img}/>
         </div>
-      ))}      
+      ))}  
+      
     </section>
   </>
   )
