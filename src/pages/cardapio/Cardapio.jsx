@@ -9,7 +9,7 @@ import { ShopCar } from '../../context/ContextValueCar'
 
 export default function Cardapio() {
 
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   
   const {items, setItems, valuesItems, setValuesItems} = useContext(ShopCar);
 
@@ -21,8 +21,8 @@ export default function Cardapio() {
           throw new Error('Falha ao carregar os dados');
         }
         const data = await response.json();
-        setData(data); // Define os produtos no estado
-        console.log(data)
+        setData(data.data); // Define os produtos no estado
+        
       } catch (error) {
         console.error('Erro ao carregar os produtos:', error);
       }
@@ -36,15 +36,11 @@ export default function Cardapio() {
     <Header item={0} valueCount={0}/>
 
     <section className="cardSection">
-      {dataProdutos.map((item)=>{
-        return(
-        <div key={item.id} >
-            <Card itemId={item.id} title={item.title} description={item.description} price={item.price} imgUrl={item.imgUrl}/>
+    {data.map((produto) => (
+        <div key={produto.id_produto}>
+          <Card itemId={produto.id_produto} title={produto.nome} description={produto.descricao} price={produto.preco} imgUrl={produto.img}/>
         </div>
-            
-          )
-        })}
-      
+      ))}      
     </section>
   </>
   )

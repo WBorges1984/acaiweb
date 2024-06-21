@@ -74,9 +74,34 @@ function ShopCarProvider(props){
         setCartItems(cartItemsNovo);
         CalcularTotal(cartItemsNovo)
     }
+ 
+    function edicaoItem(item){
+        
+        const  itemNovo = {
+            id: item.itemId, 
+            nome:item.title,
+            preco:item.price,
+            foto:item.imgUrl,
+            qtd: item.qtd
+        };
+        
+        // console.log(itemNovo)
+        
+        const newItem = cartItemEdicao.map((item) => {
+            if (item.id === itemNovo.id) {
+              return { ...item, name: 'Dona Florinda' };
+            }
+            return item;
+          });
 
-    return <ShopCar.Provider value={{cartItemEdicao,items, cartItems, setCartItems, AddItemCart, RemoveItemCart,totalCart, setTotalCart}}>
-        {props.children}
+        cartItemEdicao.push(newItem)
+
+    
+    }
+
+    return <ShopCar.Provider value={{cartItemEdicao, edicaoItem,items, cartItems, setCartItems, AddItemCart, RemoveItemCart,totalCart, setTotalCart}}>
+        
+    {props.children}
     </ShopCar.Provider>
 }
 
