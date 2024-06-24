@@ -1,5 +1,3 @@
-import { itemEdicao } from "../service/itemEdicao";
-
 
 const { createContext, useState, useEffect } = require("react");
 
@@ -9,7 +7,6 @@ const ShopCar = createContext({});
 
 function ShopCarProvider(props){
     const [items, setItems] = useState(0);
-    const [valuesItems, setValuesItems] = useState(0);
 
     const [cartItems, setCartItems] = useState([]);
     const [totalCart, setTotalCart] = useState(0);
@@ -36,7 +33,7 @@ function ShopCarProvider(props){
 
         
         for (var prod of cartItems){
-            if(prod.id == item.id){
+            if(prod.id === item.id){
                 item.qtd = prod.qtd + 1;
                 findItem = true;
                 cartItemsNovo.push(item);
@@ -45,7 +42,7 @@ function ShopCarProvider(props){
             }
         }
 
-        if((findItem == false) || (cartItems.length == 0)){
+        if((findItem === false) || (cartItems.length === 0)){
             cartItemsNovo.push(item);
         }
         setCartItems(cartItemsNovo);
@@ -57,7 +54,7 @@ function ShopCarProvider(props){
         let cartItemsNovo = [];
 
         for (var prod of cartItems){
-            if(prod.id == id){
+            if(prod.id === id){
                     prod.qtd = prod.qtd - 1;
             }
 

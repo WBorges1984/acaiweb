@@ -8,7 +8,9 @@
     justify-content: start;
     padding-top: 120px;
     background: rgba(255, 255, 150, 0.5);
-    height: 100%;
+    height: auto;
+    overflow-x: hidden;
+    
 }
 
 .container-checkout h1{
@@ -26,12 +28,11 @@
     font-weight: 700;
 }
 
-.item-pedido{
-    width: 50%;
-}
+
 
 .dados-client{
     width: 50%;
+    margin-left: 5px;
 }
 
 .forms-checkout{
@@ -53,6 +54,8 @@
 .forms-checkout label{
     font-size: large;
     font-weight: 500;
+    color: #fff;
+    font-weight: 800;
 }
 
 .forms-checkout input{
@@ -70,5 +73,59 @@
 }
 
 #referencia{
-    width: auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+#idCheckoutBtn{
+    width: 100%;
+    text-align: center;
+}
+
+#btnCheckout{
+    width: 50%;
+    font-size: x-large;
+}
+
+/* lista de itens */
+
+.item-pedido{
+    margin-right: 5px;
+    width: 50%;
+}
+
+.listaItem{
+    padding: 20px;
+    gap: 30px;
+    margin-top: 15px;
+    justify-content: center;
+    background-color: rgba(196, 6, 126, 0.4);
+    border-radius: 15px;
+    margin-left: 20px;
+    color: #fff;
+}
+
+
+.listaItem img{
+    width: 68px;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 5PX;
+}
+
+.complementos{
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    width: 100%;
+    gap: 10px;
+}
+
+.adicional{
+    display:grid;
+    grid-template-columns: 70px 70px ;
 }

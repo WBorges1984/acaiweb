@@ -22,15 +22,15 @@ export default function Header() {
                     <img className='mb-4' src="images/logoRed2.png" alt="Logo da marca" />
                 </div>
                 <nav>
-                    <Link to=''>Inicio</Link>
-                    <Link to=''>Açaí</Link>
+                    <Link to='/cardapio'>Inicio</Link>
+                    <Link to='/checkout'>Açaí</Link>
                     <Link to=''>Doces</Link>
                     <Link to=''>Picolé</Link>
                 </nav>
-                <div className='lupaInput'>
+                {/* <div className='lupaInput'>
                     <img className='mb-4' src="images/lupa.png" alt="Lupa" />
                     <input type="text" placeholder='Procura no Cardápio' />
-                </div>
+                </div> */}
                 <div className="shopcar" onClick={openModalEdicao}>
                     <img className='mb-4' src="images/buy.png" alt="Carrinho de compras" />
                     <div>
