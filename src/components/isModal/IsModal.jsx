@@ -3,12 +3,13 @@ import { Dock } from 'react-dock';
 import './ismodal.css'
 import { useContext, useEffect, useState } from 'react';
 import { ShopCar } from '../../context/ContextValueCar';
+import { useNavigate } from 'react-router-dom';
 
 export function IsModal(props){
 const [show, setShow] = useState(false)
 const {cartItems, totalCart, AddItemCart, RemoveItemCart} = useContext(ShopCar)
 
-
+const navigate = useNavigate();
     useEffect(()=>{
         window.addEventListener('openSideBar', function(){
             setShow(true);
@@ -34,6 +35,11 @@ const {cartItems, totalCart, AddItemCart, RemoveItemCart} = useContext(ShopCar)
       return new Intl.NumberFormat('pt-BR',{style: 'currency', currency: 'BRL'}).format(vl);
     }
 
+    function postPedido(){
+      console.log(cartItems)
+      navigate('/checkout')
+
+    }
 
     return(
         <>
@@ -47,9 +53,9 @@ const {cartItems, totalCart, AddItemCart, RemoveItemCart} = useContext(ShopCar)
 
             <div className='ModalProd' >
               <h1>Items do pedido</h1>
-               {cartItems.map((item)=>{
+               {cartItems.map((item, i)=>{
                 return(
-                  <div className="ModalProdCard" key={item.id}>
+                  <div className="ModalProdCard" key={i}>
                     <div className="modalContainer">
                       <div className="imgProdIModal">
                         <img src={item.foto} alt="" />
@@ -75,7 +81,7 @@ const {cartItems, totalCart, AddItemCart, RemoveItemCart} = useContext(ShopCar)
             </div>
               <div className="totSacola">Total: {ConverteValor(totalCart)}</div>
               <div className="btnFooter">
-                <button className='btn btn-acai '>FINALIZAR</button>
+                <button onClick={postPedido} className='btn btn-acai '>FINALIZAR</button>
               </div>
 
 

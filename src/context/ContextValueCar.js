@@ -1,7 +1,7 @@
 import { itemEdicao } from "../service/itemEdicao";
 
 
-const { createContext, useState } = require("react");
+const { createContext, useState, useEffect } = require("react");
 
 const ShopCar = createContext({});
 
@@ -14,9 +14,11 @@ function ShopCarProvider(props){
     const [cartItems, setCartItems] = useState([]);
     const [totalCart, setTotalCart] = useState(0);
 
-    const [cartItemEdicao, setCartItemEdicao] = useState([]);
+    const [cartItemEdicao, setCartItemEdicao] = useState({});
 
-    
+   useEffect(()=>{
+    console.log(cartItemEdicao)
+   },[cartItemEdicao]) 
 
     let cartItemsNovo = [];
     let findItem = false;
@@ -29,11 +31,6 @@ function ShopCarProvider(props){
     }
 
     function AddItemCart(item){
-        
-        // cartItemsNovo.push(item)
-        // setCartItems(cartItemsNovo);
-        // console.log(cartItemsNovo)
-        
         let cartItemsNovo = [];
         let findItem = false;
 
@@ -84,22 +81,11 @@ function ShopCarProvider(props){
             foto:item.imgUrl,
             qtd: item.qtd
         };
+        setCartItemEdicao(itemNovo)
         
-        // console.log(itemNovo)
-        
-        const newItem = cartItemEdicao.map((item) => {
-            if (item.id === itemNovo.id) {
-              return { ...item, name: 'Dona Florinda' };
-            }
-            return item;
-          });
-
-        cartItemEdicao.push(newItem)
-
-    
     }
 
-    return <ShopCar.Provider value={{cartItemEdicao, edicaoItem,items, cartItems, setCartItems, AddItemCart, RemoveItemCart,totalCart, setTotalCart}}>
+    return <ShopCar.Provider value={{cartItemEdicao, setCartItemEdicao, edicaoItem,items, cartItems, setCartItems, AddItemCart, RemoveItemCart,totalCart, setTotalCart}}>
         
     {props.children}
     </ShopCar.Provider>

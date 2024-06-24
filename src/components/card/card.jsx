@@ -5,7 +5,7 @@ import { ShopCar } from "../../context/ContextValueCar";
 
 export const Card = (props)=>{
     
-  const {cartItems, setCartItems, AddItemCart, RemoveItemCart,totalCart, setTotalCart} = useContext(ShopCar)
+  const {cartItemEdicao, setCartItemEdicao, edicaoItem,cartItems, setCartItems, AddItemCart, RemoveItemCart,totalCart, setTotalCart} = useContext(ShopCar)
 
     const limitarDescricao = (descricao, limite) => {
         if (descricao.length > limite) {
@@ -28,17 +28,18 @@ export const Card = (props)=>{
 
       function openModalEdicao(){
            const event = new CustomEvent('openModalEdicao');
-           window.dispatchEvent(event);          
-          
-          const item = {
-            itemId: props.itemId, 
-            title: props.title,
-            price: props.price,
-            imgUrl: props.imgUrl,
-            qtd: 1
-          }
-
-         
+           window.dispatchEvent(event);  
+           
+           
+           const item = {
+             itemId: props.itemId, 
+             title: props.title,
+             price: props.price,
+             imgUrl: props.imgUrl,
+             qtd: 1
+            }
+            
+            edicaoItem(item)
           
       }
 

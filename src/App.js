@@ -6,6 +6,7 @@ import Footer from './components/footer/footer.jsx';
 import EsqueciSenha from './pages/esqueciSenha/esqueciSenha.jsx';
 import Register from './pages/register/register.jsx';
 import Cardapio from './pages/cardapio/Cardapio.jsx';
+import Checkout from './pages/checkOut/Checkout.jsx';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <div className=''>
       <Routes>
           <Route path='/' element={<Dashboard/>}/>
+          <Route path='/checkout' element={<Checkout/>}/>
           <Route path='/cardapio' element={<Cardapio/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>

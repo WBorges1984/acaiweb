@@ -1,3 +1,36 @@
 .container-complementos h1{
-    color: aquamarine;
+    text-align: center;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.container-edicao{
+    width: 100%;
+}
+
+.container-conteudo{
+    padding-left: 2rem;
+}
+.conteudoLeft{
+    width: 35%;
+}
+.nomeFoto{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-bottom: .4rem;
+}
+.nomeFoto h2{
+    font-size: large;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.precoQtd{
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    font-weight: 700;
 }

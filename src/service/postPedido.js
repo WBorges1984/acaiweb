@@ -8,7 +8,7 @@ export const PostPedido=(item)=>{
         data_atualizacao:'2024-06-21',
         id_cliente:1,
     }
-    console.log(pedido);
+    // console.log(pedido);
 }
 
 PostPedido();

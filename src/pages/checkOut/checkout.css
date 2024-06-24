@@ -1,0 +1,74 @@
+.pagCheckout{
+    height: calc(100vh - 50px);
+}
+
+.container-checkout{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding-top: 120px;
+    background: rgba(255, 255, 150, 0.5);
+    height: 100%;
+}
+
+.container-checkout h1{
+    font-size: xx-large;
+    font-weight: 700;
+}
+.body-checkout{
+    display: inline-flex;
+    width: 100vw;
+}
+
+.body-checkout h2{
+    text-align: center;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.item-pedido{
+    width: 50%;
+}
+
+.dados-client{
+    width: 50%;
+}
+
+.forms-checkout{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 30px;
+    margin-top: 15px;
+    justify-content: space-evenly;
+    background-color: rgba(196, 6, 126, 0.4);
+    border-radius: 15px;
+    margin-right: 20px;
+}
+.formCliente{
+    width: 100%;
+    overflow-x: auto;
+}
+
+.forms-checkout label{
+    font-size: large;
+    font-weight: 500;
+}
+
+.forms-checkout input{
+    width: 100%;
+    max-width: 100%;
+    color: #fff;
+}
+
+#rua{
+    width: auto;
+}
+
+#nr{
+    width: 100px;
+}
+
+#referencia{
+    width: auto;
+}
