@@ -14,7 +14,6 @@ function ShopCarProvider(props){
     const [cartItemEdicao, setCartItemEdicao] = useState({});
 
    useEffect(()=>{
-    console.log(cartItemEdicao)
    },[cartItemEdicao]) 
 
     let cartItemsNovo = [];

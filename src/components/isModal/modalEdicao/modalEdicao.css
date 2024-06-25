@@ -1,3 +1,4 @@
+
 .container-complementos h1{
     text-align: center;
     font-size: x-large;
@@ -9,6 +10,7 @@
 }
 
 .container-conteudo{
+    display: flex;
     padding-left: 2rem;
 }
 .conteudoLeft{
@@ -33,4 +35,46 @@
     width: 100%;
     justify-content: center;
     font-weight: 700;
+}
+
+
+/* Conteudo adicionais */
+
+.conteudoRight{
+    display: flex;
+    flex-direction: column;
+}
+
+.titleAdicional{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100% ;
+}
+
+
+legend{
+    background-color: #cacaca;
+    font-size: larger;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
+.sabor img{
+    width: 68px;
+}
+
+.sabor{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.opSabor{
+    margin-top: 10px;
 }

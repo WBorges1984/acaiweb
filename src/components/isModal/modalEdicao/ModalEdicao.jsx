@@ -10,6 +10,11 @@ function ModalEdicao(props) {
     const {edicaoItem, cartItemEdicao, setCartItemEdicao, cartItems, totalCart, AddItemCart, RemoveItemCart} = useContext(ShopCar)
     const [precoUn, setPrecoUn] = useState(cartItemEdicao.preco); 
     const [qtd, setQtd] = useState(0); 
+    const [selectedSabor, setSelectedSabor] = useState('');
+
+    const handleSelectSabor = (fruit) => {
+      setSelectedSabor(fruit);
+    };
 
     function ConverteValor(vl){
       
@@ -20,27 +25,26 @@ function ModalEdicao(props) {
         window.addEventListener('openModalEdicao', function(){
             setShow(true);
             setQtd(1)
-            console.log(qtd)
         })
        
     },[]);
 
    
 
-      function SomarItem(){
-        const quantidade = qtd + 1;
-        setQtd(quantidade)
+    function SomarItem(){
+      const quantidade = qtd + 1;
+      setQtd(quantidade)
 
-        const item = {
-          itemId: cartItemEdicao.id, 
-             title: cartItemEdicao.nome,
-             price: cartItemEdicao.preco,
-             imgUrl: cartItemEdicao.foto,
-          qtd: quantidade
-         }
-         edicaoItem(item)
-  
-      }
+      const item = {
+        itemId: cartItemEdicao.id, 
+            title: cartItemEdicao.nome,
+            price: cartItemEdicao.preco,
+            imgUrl: cartItemEdicao.foto,
+        qtd: quantidade
+        }
+        edicaoItem(item)
+
+    }
 
       function SubtrairItem(){
           setQtd(qtd - 1);
@@ -65,6 +69,8 @@ function ModalEdicao(props) {
         setShow(false);
 
       }
+
+
 
   return (
     <>
@@ -92,7 +98,54 @@ function ModalEdicao(props) {
                           <button onClick={SubtrairItem} className='btn-sun-up'><span>-</span></button>}
                         </div>
                       </div>
-                      <div className="conteudoRight"></div>
+                      <div className="conteudoRight">
+                        <div className='titleAdicional'>
+                          <fieldset className='sabor'>
+                            <legend>Sabor Açaí</legend>
+
+                            <div className='opSabor'>
+                              <img onClick={()=> handleSelectSabor('banana')} src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202404231217_D0OO_i.jpg" alt="" />
+                              <input checked={selectedSabor === 'banana'} onChange={()=>handleSelectSabor('banana')} type="radio" id="banana" name="sabor" value="banana" />
+                              <label onClick={()=>handleSelectSabor('banana')} htmlFor="banana">Banana</label>
+                            </div>
+
+                            <div className='opSabor'>
+                              <img  onClick={()=> handleSelectSabor('morango')} src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202404282039_R0TK_i.jpg" alt="" />
+                              <input checked={selectedSabor === 'morango'} onChange={()=>handleSelectSabor('morango')} type="radio" id="morango" name="sabor" value="morango" />
+                              <label onClick={()=> handleSelectSabor('morango')} htmlFor="morango">Morango</label>
+                            </div>
+
+                            <div className='opSabor'>
+                              <img onClick={()=> handleSelectSabor('natural')} src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202405100840_3BTT_i.jpg" alt="" />
+                              <input checked={selectedSabor === 'natural'} onChange={()=>handleSelectSabor('natural')} type="radio" id="natural" name="sabor" value="natural" />
+                              <label onClick={()=> handleSelectSabor('natural')} htmlFor="natural">Natural</label>
+                            </div>
+                          </fieldset>
+                        </div>
+                        
+                        <div className='titleAdicional'>
+                        <fieldset>
+                          <legend>Com Recheio no Meio</legend>
+                            <ol>
+                              <li>
+                                <h4>Sem recheio</h4>
+                                <p>Com essa seleção o açaí ira Sem Adicionais para colocar no meio.</p>
+                              </li>
+                              <li>
+                                qw
+                              </li>
+                            </ol>
+                          </fieldset>
+                        </div>
+                        
+                        
+                        <div className='titleAdicional'><h3>Com Cobertura</h3></div>
+                        
+                        <div className='titleAdicional'><h3>Calda na Cobertura</h3></div>
+                        <div className='titleAdicional'><h3>Vai um Adicional</h3></div>
+                        <div className='titleAdicional'><h3>Descartável?</h3></div>
+                        <div className='titleAdicional'><h3>Algum comentário?</h3></div>
+                      </div>
                     </div>
                   </div>
             </div>
