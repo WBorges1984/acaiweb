@@ -13,7 +13,12 @@
     display: flex;
     padding-left: 2rem;
 }
+
+.conteudoLeftAjuste{
+    width: 35%;
+}
 .conteudoLeft{
+    position: absolute;
     width: 35%;
 }
 .nomeFoto{
@@ -77,4 +82,26 @@ legend{
 
 .opSabor{
     margin-top: 10px;
+}
+
+.semRecheio{
+    display: flex;
+    gap: 10px;
+}
+
+.semRecheio h4{
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.semRecheio p{
+    font-size: 15px;
+    color: tomato;
+}
+
+.semRecheio .texto{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
 }

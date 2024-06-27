@@ -98,6 +98,7 @@ function ModalEdicao(props) {
                           <button onClick={SubtrairItem} className='btn-sun-up'><span>-</span></button>}
                         </div>
                       </div>
+                      <div className="conteudoLeftAjuste"></div>
                       <div className="conteudoRight">
                         <div className='titleAdicional'>
                           <fieldset className='sabor'>
@@ -124,17 +125,19 @@ function ModalEdicao(props) {
                         </div>
                         
                         <div className='titleAdicional'>
-                        <fieldset>
+                        <fieldset className='sabor'>
                           <legend>Com Recheio no Meio</legend>
-                            <ol>
-                              <li>
-                                <h4>Sem recheio</h4>
-                                <p>Com essa seleção o açaí ira Sem Adicionais para colocar no meio.</p>
-                              </li>
-                              <li>
-                                qw
-                              </li>
-                            </ol>
+                          <div className="">
+                            <div className='semRecheio'>
+                                <input type="checkbox" name="" id="" />
+                                <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403141821_8AMO_i.jpg" alt="" />
+                                  <div className='texto'>
+                                    <h4>Sem recheio</h4>
+                                    <p>Com essa seleção o açaí ira Sem Adicionais para colocar no meio.</p>
+                                  </div>
+                                  <hr />
+                            </div>                           
+                          </div>itemRecheio
                           </fieldset>
                         </div>
                         

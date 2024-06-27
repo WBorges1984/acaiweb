@@ -19,6 +19,7 @@ function Checkout() {
           const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
           if (!response.ok) {
             throw new Error('Network response was not ok');
+            console.log(address)
           }
           const data = await response.json();
           if (data.erro) {
@@ -124,7 +125,7 @@ function Checkout() {
                     </div>
                     <div>
                         <label htmlFor="rua">Rua:</label>
-                        <input type="text"  id='rua' value={address.logradouro}/>
+                        <input type="text"  id='rua' value={address != null ? address.logradouro : ''}/>
                     </div>
                     <div>
                         <label htmlFor="numero">Nr:</label>
@@ -136,11 +137,11 @@ function Checkout() {
                     </div>
                     <div>
                         <label htmlFor="bairro">Bairro:</label>
-                        <input type="text" value={address.bairro}/>
+                        <input type="text" value={address != null ? address.bairro: ''}/>
                     </div>
                     <div>
                         <label htmlFor="cidade">Cidade:</label>
-                        <input type="text" value={address.localidade}/>
+                        <input type="text" value={address != null ? address.localidade : ''}/>
                     </div>
                     <div id='referencia'>
                         <label htmlFor="cidade">Referencia:</label>
