@@ -126,23 +126,89 @@ function ModalEdicao(props) {
                         
                         <div className='titleAdicional'>
                         <fieldset className='sabor'>
-                          <legend>Com Recheio no Meio</legend>
+                          <legend><p>Com Recheio no Meio</p><em><span>Escolha pelo menos 1 opção.</span><span>0/3 OBRIGATÓRIO</span></em></legend>
+                          
                           <div className="">
-                            <div className='semRecheio'>
-                                <input type="checkbox" name="" id="" />
+                            {/* RECHEIO */}
+                            <div className='complemento'>
+                                <input type="checkbox" name="semrecheio" id="semrecheio" />             
                                 <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403141821_8AMO_i.jpg" alt="" />
                                   <div className='texto'>
                                     <h4>Sem recheio</h4>
                                     <p>Com essa seleção o açaí ira Sem Adicionais para colocar no meio.</p>
                                   </div>
-                                  <hr />
                             </div>                           
-                          </div>itemRecheio
+                            <div className='complemento'>
+                                <input type="checkbox" name="" id="" />
+                                <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403141916_BTBE_i.jpg" alt="" />
+                                  <div className='texto'>
+                                    <h4>Amendoim RC</h4>
+                                    <p>Irá uma porção em separado deste adicional. Ps. Foto meramente explicativa</p>
+                                  </div>
+                            </div>                           
+                            <div className='complemento'>
+                                <input type="checkbox" name="" id="" />
+                                <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403141917_15GI_i.jpg" alt="" />
+                                  <div className='texto'>
+                                    <h4>Granola RC</h4>
+                                    <p>Irá uma porção em separado deste adicional. Ps. Foto meramente explicativa</p>
+                                  </div>
+                            </div>                           
+                            <div className='complemento'>
+                                <input type="checkbox" name="" id="" />
+                                <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202404201515_BDY8_i.jpg" alt="" />
+                                  <div className='texto'>
+                                    <h4>Aveia RC</h4>
+                                    <p>Irá uma porção em separado deste adicional. Ps. Foto meramente explicativa</p>
+                                  </div>
+                            </div> 
+                            <div className='complemento'>
+                                <input type="checkbox" name="" id="" />
+                                <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202405172217_C503_i.jpg" alt="" />
+                                  <div className='texto'>
+                                    <h4>Paçoca RC</h4>
+                                    <p>Irá uma porção em separado deste adicional. Ps. Foto meramente explicativa</p>
+                                  </div>
+                            </div> 
+                            {/* RECHEIO */}
+                            
+                            <legend><p>Com cobertura</p><em><span>Escolha pelo menos 1 opção.</span><span>0/3 OBRIGATÓRIO</span></em></legend>
+                            {/* COM RECHEIO */}
+                            <div className='complemento'>
+                                <input type="checkbox" name="" id="" />
+                                <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403141821_8AMO_i.jpg" alt="" />
+                                  <div className='texto'>
+                                    <h4>Sem cobertura</h4>
+                                    <p>Essa opção ira o açaí sem cobertura como na foto. Ps. Foto meramente explicativa.</p>
+                                  </div>
+                            </div> 
+                            <div className='complemento'>
+                                <input type="checkbox" name="" id="" />
+                                <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403141916_BTBE_i.jpg" alt="" />
+                                  <div className='texto'>
+                                    <h4>Amendoim Cb</h4>
+                                    <p>Irá coberto de Amendoim</p>
+                                  </div>
+                            </div> 
+                            <div className='complemento'>
+                                <input type="checkbox" name="" id="" />
+                                <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403141917_15GI_i.jpg" alt="" />
+                                  <div className='texto'>
+                                    <h4>Granola Cb</h4>
+                                    <p>Irá coberto de Granola</p>
+                                  </div>
+                            </div> 
+                            <div className='complemento'>
+                                <input type="checkbox" name="" id="" />
+                                <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202404201515_BDY8_i.jpg" alt="" />
+                                  <div className='texto'>
+                                    <h4>Aveia Cb</h4>
+                                    <p>Irá coberto de Aveia</p>
+                                  </div>
+                            </div> 
+                          </div>
                           </fieldset>
                         </div>
-                        
-                        
-                        <div className='titleAdicional'><h3>Com Cobertura</h3></div>
                         
                         <div className='titleAdicional'><h3>Calda na Cobertura</h3></div>
                         <div className='titleAdicional'><h3>Vai um Adicional</h3></div>
