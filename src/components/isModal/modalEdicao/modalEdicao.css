@@ -19,7 +19,7 @@
 }
 .conteudoLeft{
     position: absolute;
-    width: 35%;
+    width: 30%;
 }
 .nomeFoto{
     display: flex;
@@ -27,6 +27,10 @@
     width: 100%;
     align-items: center;
     margin-bottom: .4rem;
+}
+
+#imgProd{
+    width: 70%;
 }
 .nomeFoto h2{
     font-size: large;
@@ -59,11 +63,12 @@
 
 
 legend{
-    background-color: #cacaca;
+    background-color: #8d4646;
     font-size: larger;
     padding: 5px;
     border-radius: 5px;
     width: 100%;
+    color: #fff;
 }
 
 legend em{
@@ -100,6 +105,7 @@ legend span{
     gap: 10px;
     margin-left: 20px;
     margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .complemento h4{

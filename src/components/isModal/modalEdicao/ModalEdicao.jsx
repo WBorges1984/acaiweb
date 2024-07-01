@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { Dock } from 'react-dock';
 import { ShopCar } from '../../../context/ContextValueCar';
-import {itemEdit } from '../../../service/itemEdicao.js'
 import './modalEdicao.css'
-import { func } from 'prop-types';
+import { fetchAdicionaisAll } from '../../../service/apiAdicionais';
 
 function ModalEdicao(props) {
     const [show, setShow] = useState(false);
@@ -11,6 +10,7 @@ function ModalEdicao(props) {
     const [precoUn, setPrecoUn] = useState(cartItemEdicao.preco); 
     const [qtd, setQtd] = useState(0); 
     const [selectedSabor, setSelectedSabor] = useState('');
+    const [dataAdicionais, setDataAdicionais] = useState([]);
 
     const handleSelectSabor = (fruit) => {
       setSelectedSabor(fruit);
@@ -26,9 +26,19 @@ function ModalEdicao(props) {
             setShow(true);
             setQtd(1)
         })
+
+        const getData = async () => {
+          try {
+            const adicionais = await fetchAdicionaisAll();
+            setDataAdicionais(adicionais);
+          } catch (error) {
+            console.error('Erro ao carregar os adicionais:', error);
+          }
+        };
+        getData();
+
        
     },[]);
-
    
 
     function SomarItem(){
@@ -88,7 +98,7 @@ function ModalEdicao(props) {
                       <div className="conteudoLeft">
                         <div className="nomeFoto">
                           <h2>{cartItemEdicao.nome}</h2>
-                          <img src={cartItemEdicao.foto} alt="" />
+                          <img id='imgProd' src={cartItemEdicao.foto} alt="" />
                         </div>
                         <div className="precoQtd">
                           {ConverteValor(cartItemEdicao.preco)}
@@ -206,14 +216,79 @@ function ModalEdicao(props) {
                                     <p>Irá coberto de Aveia</p>
                                   </div>
                             </div> 
+
+
+                            
+                          <legend><p>Calda na Cobertura</p><em><span>Escolha pelo menos 1 opção.</span><span>0/1 OBRIGATÓRIO</span></em></legend>
+                          <div className="">
+                            {/* CALDA COBERTURA */}
+                            <div className='complemento'>
+                                <input type="checkbox" name="semrecheio" id="semrecheio" />             
+                                <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403141821_8AMO_i.jpg" alt="" />
+                                  <div className='texto'>
+                                    <h4>Sem calda</h4>
+                                    <p>Com essa seleção o açaí ira Sem calda na cobertura.</p>
+                                  </div>
+                            </div>   
+                            <div className='complemento'>
+                                <input type="checkbox" name="semrecheio" id="semrecheio" />             
+                                <img src="https://static-images.ifood.com.br/image/upload/t_thumbnail/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403082241_P2K2_i.jpg" alt="" />
+                                  <div className='texto'>
+                                    <h4>Calda de Chocolate</h4>
+                                    <p></p>
+                                  </div>
+                            </div>   
+                            <div className='complemento'>
+                                <input type="checkbox" name="semrecheio" id="semrecheio" />             
+                                <img src="https://static-images.ifood.com.br/image/upload/t_thumbnail/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403082243_R2Q2_i.jpg" alt="" />
+                                  <div className='texto'>
+                                    <h4>Calda de morango</h4>
+                                    <p></p>
+                                  </div>
+                            </div>   
+                            <div className='complemento'>
+                                <input type="checkbox" name="semrecheio" id="semrecheio" />             
+                                <img src="https://static-images.ifood.com.br/image/upload/t_thumbnail/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403082244_2FQA_i.jpg" alt="" />
+                                  <div className='texto'>
+                                    <h4>
+                                    Cobertura de leite condensado</h4>
+                                    <p></p>
+                                  </div>
+                            </div>   
+                          </div>
+                          <legend><p>Vai um Adicional?</p><em><span>Escolha até 10 opções.</span><span>0/10</span></em></legend>
+                          <div className="">
+                            {/*DESCARTAVEL */}
+                            {dataAdicionais.map((item)=>{
+                            return(
+                              <div key={item.id_adicionais} className='complemento'>
+                                  <input type="checkbox" name="semrecheio" id="semrecheio" />  
+                                  <img src={item.url_img} alt="" />
+                                    <div className='texto'>
+                                  <b>{ConverteValor(item.preco)}</b>           
+                                      <h4>{item.descricao}</h4>
+                                      <p>{item.obs}</p>
+                                    </div>
+                              </div>)
+                            }) }
+                            </div>
+
+                            <legend><p>Precisa de descartáveis?</p></legend>
+                            <div className="">
+
+                            <div className='complemento'>
+                                  <input type="checkbox" name="semrecheio" id="semrecheio" />  
+                                  <img src="https://static-images.ifood.com.br/image/upload/t_thumbnail/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403141949_82JO_i.jpg" alt="" />
+                                    <div className='texto'>
+                                  <b>R$ 0,50</b>           
+                                      <h4>Com descartáveis</h4>
+                                      <p>Preciso de colher e guardanapo.</p>
+                                    </div>
+                              </div>
+                            </div>     
                           </div>
                           </fieldset>
                         </div>
-                        
-                        <div className='titleAdicional'><h3>Calda na Cobertura</h3></div>
-                        <div className='titleAdicional'><h3>Vai um Adicional</h3></div>
-                        <div className='titleAdicional'><h3>Descartável?</h3></div>
-                        <div className='titleAdicional'><h3>Algum comentário?</h3></div>
                       </div>
                     </div>
                   </div>
