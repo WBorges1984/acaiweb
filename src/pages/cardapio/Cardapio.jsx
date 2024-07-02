@@ -19,7 +19,8 @@ export default function Cardapio() {
     const getData = async () => {
       try {
         const produtos = await fetchProdutosAll();
-        setData(produtos); // Define os produtos no estado
+        setData(produtos);
+        // console.log(produtos)
       } catch (error) {
         console.error('Erro ao carregar os produtos:', error);
       }
@@ -34,7 +35,7 @@ export default function Cardapio() {
     <section className="cardSection">
     {data.map((produto) => (
         <div key={produto.id_produto}>
-          <Card itemId={produto.id_produto} title={produto.nome} description={produto.descricao} price={produto.preco} imgUrl={produto.img}/>
+          <Card compl={produto.complemento} itemId={produto.id_produto} title={produto.nome} description={produto.descricao} price={produto.preco} imgUrl={produto.img}/>
         </div>
       ))}  
       

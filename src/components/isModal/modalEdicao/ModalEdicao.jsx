@@ -12,6 +12,22 @@ function ModalEdicao(props) {
     const [selectedSabor, setSelectedSabor] = useState('');
     const [dataAdicionais, setDataAdicionais] = useState([]);
 
+    // RECHEIO RC
+    const [semRecheio, setSemRecheio] = useState(false);
+    const [recheioMeio, setRecheioMeio] = useState(0);
+
+    const [amendoimrc, setAmendoimrc] = useState(false);
+    const recheioObj = {
+          pacocarc: false,
+          aveiarc: false,
+          granolarc: false,
+          RCamendoim: amendoimrc,
+          semrecheio: false
+        }
+
+    
+
+
     const handleSelectSabor = (fruit) => {
       setSelectedSabor(fruit);
     };
@@ -62,6 +78,8 @@ function ModalEdicao(props) {
 
 
       function FinalizarEdicao(id,nome,preco,foto){
+
+        console.log(selectedSabor)
         const item = {
           
             id: id, 
@@ -80,6 +98,10 @@ function ModalEdicao(props) {
 
       }
 
+      function SelectRecheio(){
+        setRecheioMeio(recheioMeio + 1)
+      }
+
 
 
   return (
@@ -87,7 +109,7 @@ function ModalEdicao(props) {
         <Dock position='bottom'
             isVisible={show}
             fluid={false}
-            size={400}
+            size={600}
             onVisibleChange={(visible) =>{
                 setShow(visible);
             }}>
@@ -136,12 +158,12 @@ function ModalEdicao(props) {
                         
                         <div className='titleAdicional'>
                         <fieldset className='sabor'>
-                          <legend><p>Com Recheio no Meio</p><em><span>Escolha pelo menos 1 opção.</span><span>0/3 OBRIGATÓRIO</span></em></legend>
+                          <legend><p>Com Recheio no Meio</p><em><span>Escolha pelo menos 1 opção.</span><span>{recheioMeio}/3 OBRIGATÓRIO</span></em></legend>
                           
                           <div className="">
-                            {/* RECHEIO */}
+          {/* RECHEIO */}
                             <div className='complemento'>
-                                <input type="checkbox" name="semrecheio" id="semrecheio" />             
+                                <input type="checkbox" name="semrecheio" id="semrecheio" onChange={(e)=>setSemRecheio(!semRecheio)}/>             
                                 <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403141821_8AMO_i.jpg" alt="" />
                                   <div className='texto'>
                                     <h4>Sem recheio</h4>
@@ -149,7 +171,7 @@ function ModalEdicao(props) {
                                   </div>
                             </div>                           
                             <div className='complemento'>
-                                <input type="checkbox" name="" id="" />
+                                <input type="checkbox" name="amendoimrc" id="amendoimrc" onClick={(e)=>setAmendoimrc(!amendoimrc)} disabled={semRecheio} checked={recheioObj.amendoimrc}/>
                                 <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403141916_BTBE_i.jpg" alt="" />
                                   <div className='texto'>
                                     <h4>Amendoim RC</h4>
@@ -157,7 +179,7 @@ function ModalEdicao(props) {
                                   </div>
                             </div>                           
                             <div className='complemento'>
-                                <input type="checkbox" name="" id="" />
+                                <input type="checkbox" name="granolarc" id="granolarc" disabled={semRecheio}/>
                                 <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202403141917_15GI_i.jpg" alt="" />
                                   <div className='texto'>
                                     <h4>Granola RC</h4>
@@ -165,7 +187,7 @@ function ModalEdicao(props) {
                                   </div>
                             </div>                           
                             <div className='complemento'>
-                                <input type="checkbox" name="" id="" />
+                                <input type="checkbox" name="aveiarc" id="aveiarc" disabled={semRecheio}/>
                                 <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202404201515_BDY8_i.jpg" alt="" />
                                   <div className='texto'>
                                     <h4>Aveia RC</h4>
@@ -173,14 +195,14 @@ function ModalEdicao(props) {
                                   </div>
                             </div> 
                             <div className='complemento'>
-                                <input type="checkbox" name="" id="" />
+                                <input type="checkbox" name="pacocarc" id="pacocarc" disabled={semRecheio}/>
                                 <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d8ed81ea-71da-43ea-baa5-f05001380037/202405172217_C503_i.jpg" alt="" />
                                   <div className='texto'>
                                     <h4>Paçoca RC</h4>
                                     <p>Irá uma porção em separado deste adicional. Ps. Foto meramente explicativa</p>
                                   </div>
-                            </div> 
-                            {/* RECHEIO */}
+                          </div> 
+          {/* RECHEIO */}
                             
                             <legend><p>Com cobertura</p><em><span>Escolha pelo menos 1 opção.</span><span>0/3 OBRIGATÓRIO</span></em></legend>
                             {/* COM RECHEIO */}

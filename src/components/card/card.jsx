@@ -26,20 +26,36 @@ export const Card = (props)=>{
         }
 
 
-      function openModalEdicao(){
-           const event = new CustomEvent('openModalEdicao');
-           window.dispatchEvent(event);  
+      function openModalEdicao(iscompl){
+        console.log(iscompl)
+        if(iscompl){
+          const event = new CustomEvent('openModalEdicao');
+          window.dispatchEvent(event);  
+          
+          const item = {
+            itemId: props.itemId, 
+            title: props.title,
+            price: props.price,
+            imgUrl: props.imgUrl,
+            qtd: 1
+           }
            
+           edicaoItem(item)
+
+        }else{
+          const item = {
+          
+            id: props.itemId, 
+            nome: props.title,
+            preco: props.price,
+            foto: props.imgUrl,
+            qtd: 1
+          }
+        
+        AddItemCart(item)
+        
+        }
            
-           const item = {
-             itemId: props.itemId, 
-             title: props.title,
-             price: props.price,
-             imgUrl: props.imgUrl,
-             qtd: 1
-            }
-            
-            edicaoItem(item)
           
       }
 
@@ -56,7 +72,7 @@ export const Card = (props)=>{
                       <p className="priceProd">A partir de <span>R$ {props.price} <em>R${precoFicticio(props.price, 20)}</em></span></p>
                     </div>
                     <div className="buttons-cart">
-                      <button className="btn btn-acai" onClick={openModalEdicao}>Adicionar</button>
+                      <button className="btn btn-acai" onClick={(e)=>openModalEdicao(props.compl)}>Adicionar</button>
                     </div>
                   </div>
               </div>
