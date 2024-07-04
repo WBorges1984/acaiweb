@@ -109,7 +109,7 @@ function ModalEdicao(props) {
         <Dock position='bottom'
             isVisible={show}
             fluid={false}
-            size={600}
+            size={350}
             onVisibleChange={(visible) =>{
                 setShow(visible);
             }}>
